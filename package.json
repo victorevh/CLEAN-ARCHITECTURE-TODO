@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only src/interface/http/server.ts",
+    "dev": "ts-node-dev --respawn --transpile-only -r tsconfig-paths/register src/interface/http/server.ts",
     "build": "tsc",
     "start": "node dist/server.js",
     "test": "jest"
@@ -19,6 +19,7 @@
     "jest": "^30.0.4",
     "ts-jest": "^29.4.0",
     "ts-node-dev": "^2.0.0",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.8.3"
   },
   "dependencies": {
