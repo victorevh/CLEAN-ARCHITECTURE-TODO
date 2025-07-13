@@ -3,12 +3,14 @@ import { Task } from "@domain/entities/Task";
 import { ITaskRepository } from "@domain/repositories/ITaskRepository";
 import { ICreateTaskUseCase } from "@application/use-cases/create-task/ICreateTaskUseCase";
 import { CreateTaskDTO } from "@application/use-cases/create-task/CreateTaskDTO";
-import { injectable } from "inversify";
+import { inject, injectable } from "inversify";
+import TYPES from "@core/types";
 
 @injectable()
 export class CreateTaskUseCase implements ICreateTaskUseCase {
-  constructor(private taskRepository: ITaskRepository) {}
-
+  constructor(
+    @inject(TYPES.ITaskRepository) private taskRepository: ITaskRepository
+  ) {}
   async execute(data: CreateTaskDTO): Promise<Task> {
     const task = new Task({
       id: randomUUID(),

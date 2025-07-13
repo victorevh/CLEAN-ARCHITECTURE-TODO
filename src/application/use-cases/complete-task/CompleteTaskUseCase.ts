@@ -1,10 +1,14 @@
 import { ITaskRepository } from "@domain/repositories/ITaskRepository";
 import { ICompleteTaskUseCase } from "@application/use-cases/complete-task/ICompleteTaskUseCase";
-import { injectable } from "inversify";
+import { inject, injectable } from "inversify";
+import TYPES from "@core/types";
 
 @injectable()
 export class CompleteTaskUseCase implements ICompleteTaskUseCase {
-  constructor(private taskRepository: ITaskRepository) {}
+  constructor(
+    @inject(TYPES.ITaskRepository)
+    private taskRepository: ITaskRepository
+  ) {}
 
   async execute(id: string): Promise<void> {
     const task = await this.taskRepository.findById(id);
