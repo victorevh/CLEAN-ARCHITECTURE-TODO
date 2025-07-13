@@ -1,3 +1,5 @@
+import { HttpError } from "@interface/http/errors/HttpError";
+
 export class Task {
   public readonly id: string;
   public title: string;
@@ -15,7 +17,7 @@ export class Task {
     updatedAt?: Date;
   }) {
     if (!props.title || props.title.trim().length === 0) {
-      throw new Error("Task Title must not be empty");
+      throw HttpError.badRequest("Task Title must not be empty");
     }
 
     this.id = props.id;
@@ -34,7 +36,7 @@ export class Task {
 
   public updateDetails(title: string, description?: string) {
     if (!title || title.trim().length === 0) {
-      throw new Error("Task Title must not be empty");
+      throw HttpError.badRequest("Task Title must not be empty");
     }
     this.title = title;
     this.description = description;
