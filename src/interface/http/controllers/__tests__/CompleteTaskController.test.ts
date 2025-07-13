@@ -1,4 +1,4 @@
-import { CompleteTaskController } from "../CompleteTaskController";
+import { CompleteTaskController } from "@interface/http/controllers/CompleteTaskController";
 import { CompleteTaskUseCase } from "@application/use-cases/complete-task/CompleteTaskUseCase";
 import type { IHttpRequest } from "@interface/http/protocols/IHttpRequest";
 import type { IHttpResponse } from "@interface/http/protocols/IHttpResponse";

@@ -1,4 +1,4 @@
-import { CreateTaskController } from "../CreateTaskController";
+import { CreateTaskController } from "@interface/http/controllers/CreateTaskController";
 import { CreateTaskUseCase } from "@application/use-cases/create-task/CreateTaskUseCase";
 import { CreateTaskDTO } from "@application/use-cases/create-task/CreateTaskDTO";
 import type { IHttpRequest } from "@interface/http/protocols/IHttpRequest";
