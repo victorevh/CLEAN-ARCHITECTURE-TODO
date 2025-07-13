@@ -13,14 +13,16 @@ import { UpdateTaskController } from "@interface/http/controllers/UpdateTaskCont
 import { GetTaskByIdController } from "@interface/http/controllers/GetTaskByIdController";
 import { CompleteTaskController } from "@interface/http/controllers/CompleteTaskController";
 import { DeleteTaskController } from "@interface/http/controllers/DeleteTaskController";
-import { MongoTaskRepository } from "@infra/db/mongodb/repositories/MongoTaskRepository";
+import { selectRepository } from "@core/selectRepository";
+
+const SelectedRepository = selectRepository();
 
 const container = new Container();
 
 // Repository bindings
 container
   .bind<ITaskRepository>(TYPES.ITaskRepository)
-  .to(MongoTaskRepository)
+  .to(SelectedRepository)
   .inSingletonScope();
 // Use case bindings
 container
