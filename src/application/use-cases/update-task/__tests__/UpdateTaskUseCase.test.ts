@@ -1,5 +1,5 @@
 import { UpdateTaskUseCase } from "@application/use-cases/update-task/UpdateTaskUseCase";
-import { InMemoryTaskRepository } from "@infra/repositories/InMemoryTaskRepository";
+import { InMemoryTaskRepository } from "@infra/db/in-memory/repositories/InMemoryTaskRepository";
 import { UpdateTaskDTO } from "@application/use-cases/update-task/UpdateTaskDTO";
 import { Task } from "@domain/entities/Task";
 import { HttpError } from "@interface/http/errors/HttpError";

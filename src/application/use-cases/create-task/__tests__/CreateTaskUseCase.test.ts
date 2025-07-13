@@ -1,4 +1,4 @@
-import { InMemoryTaskRepository } from "@infra/repositories/InMemoryTaskRepository";
+import { InMemoryTaskRepository } from "@infra/db/in-memory/repositories/InMemoryTaskRepository";
 import { CreateTaskUseCase } from "@application/use-cases/create-task/CreateTaskUseCase";
 import { CreateTaskDTO } from "@application/use-cases/create-task/CreateTaskDTO";
 

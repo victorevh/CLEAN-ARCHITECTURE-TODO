@@ -1,5 +1,5 @@
 import { ListTasksUseCase } from "@application/use-cases/list-tasks/ListTasksUseCase";
-import { InMemoryTaskRepository } from "@infra/repositories/InMemoryTaskRepository";
+import { InMemoryTaskRepository } from "@infra/db/in-memory/repositories/InMemoryTaskRepository";
 import { Task } from "@domain/entities/Task";
 
 describe("ListTasksUseCase", () => {
