@@ -4,7 +4,8 @@ import { CreateTaskController } from "@interface/http/controllers/CreateTaskCont
 import { ListTasksController } from "@interface/http/controllers/ListTasksController";
 import { UpdateTaskController } from "@interface/http/controllers/UpdateTaskController";
 import { GetTaskByIdController } from "@interface/http/controllers/GetTaskByIdController";
-import { CompleteTaskController } from "../controllers/CompleteTaskController";
+import { CompleteTaskController } from "@interface/http/controllers/CompleteTaskController";
+import { DeleteTaskController } from "@interface/http/controllers/DeleteTaskController";
 import container from "@core/container";
 import TYPES from "@core/types";
 
@@ -25,11 +26,15 @@ const getTaskByIdController = container.get<GetTaskByIdController>(
 const completeTaskController = container.get<CompleteTaskController>(
   TYPES.CompleteTaskController
 );
+const deleteTaskController = container.get<DeleteTaskController>(
+  TYPES.DeleteTaskController
+);
 
 router.post("/tasks", adaptRoute(createTaskController));
 router.get("/tasks", adaptRoute(listTasksController));
 router.patch("/tasks/:id", adaptRoute(updateTaskController));
 router.get("/tasks/:id", adaptRoute(getTaskByIdController));
 router.patch("/tasks/:id/complete", adaptRoute(completeTaskController));
+router.delete("/tasks/:id", adaptRoute(deleteTaskController));
 
 export default router;
