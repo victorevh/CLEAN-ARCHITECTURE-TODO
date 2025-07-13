@@ -1,10 +1,10 @@
 import { Router } from "express";
-import container from "@core/container";
-import TYPES from "@core/types";
 import { adaptRoute } from "@interface/http/adapters/express-adapter";
 import { CreateTaskController } from "@interface/http/controllers/CreateTaskController";
 import { ListTasksController } from "@interface/http/controllers/ListTasksController";
-import { UpdateTaskController } from "../controllers/UpdateTaskController";
+import { UpdateTaskController } from "@interface/http/controllers/UpdateTaskController";
+import container from "@core/container";
+import TYPES from "@core/types";
 
 const router = Router();
 

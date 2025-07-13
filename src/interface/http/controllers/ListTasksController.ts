@@ -1,9 +1,9 @@
 import { inject, injectable } from "inversify";
-import { IController } from "@interface/http/protocols/IController";
-import { IHttpRequest } from "@interface/http/protocols/IHttpRequest";
-import { IHttpResponse } from "@interface/http/protocols/IHttpResponse";
 import { ListTasksUseCase } from "@application/use-cases/list-tasks/ListTasksUseCase";
 import { HttpError } from "@interface/http/errors/HttpError";
+import type { IController } from "@interface/http/protocols/IController";
+import type { IHttpRequest } from "@interface/http/protocols/IHttpRequest";
+import type { IHttpResponse } from "@interface/http/protocols/IHttpResponse";
 import TYPES from "@core/types";
 
 @injectable()
