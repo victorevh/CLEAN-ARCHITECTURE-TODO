@@ -1,5 +1,6 @@
-import dotenv from "dotenv";
-dotenv.config();
+import dotenvFlow from "dotenv-flow";
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+dotenvFlow.config();
 
 import "reflect-metadata";
 import express from "express";
@@ -8,18 +9,27 @@ import { connectMongoose } from "@infra/db/mongodb/mongoClient";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const DRIVER = process.env.REPOSITORY_DRIVER;
 
 app.use(express.json());
 app.use("/api", taskRoutes);
 
 async function start() {
   try {
-    await connectMongoose();
+    if (DRIVER === "mongo") {
+      await connectMongoose();
+      console.log("[Database] Connected to MongoDB");
+    }
+
+    if (DRIVER === "inmemory") {
+      console.log("[Database] Using InMemory Repository");
+    }
+
     app.listen(PORT, () => {
-      console.log(`Server is running on port ${PORT}`);
+      console.log(`[Server] Running on port ${PORT} using "${DRIVER}" driver`);
     });
   } catch (error) {
-    console.error("[Server] Failed to connect to MongoDB", error);
+    console.error("[Startup] Failed to initialize server:", error);
     process.exit(1);
   }
 }
