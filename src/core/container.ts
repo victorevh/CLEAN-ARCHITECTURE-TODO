@@ -8,14 +8,16 @@ import { GetTaskByIdUseCase } from "@application/use-cases/get-task-by-id/GetTas
 import { UpdateTaskUseCase } from "@application/use-cases/update-task/UpdateTaskUseCase";
 import { DeleteTaskUseCase } from "@application/use-cases/delete-task/DeleteTaskUseCase";
 import { CompleteTaskUseCase } from "@application/use-cases/complete-task/CompleteTaskUseCase";
+import { CreateTaskController } from "@interface/http/controllers/CreateTaskController";
 
 const container = new Container();
 
+// Repository bindings
 container
   .bind<ITaskRepository>(TYPES.ITaskRepository)
   .to(InMemoryTaskRepository)
   .inSingletonScope();
-
+// Use case bindings
 container
   .bind<CreateTaskUseCase>(TYPES.CreateTaskUseCase)
   .to(CreateTaskUseCase);
@@ -32,5 +34,9 @@ container
 container
   .bind<CompleteTaskUseCase>(TYPES.CompleteTaskUseCase)
   .to(CompleteTaskUseCase);
+// Controller bindings
+container
+  .bind<CreateTaskController>(TYPES.CreateTaskController)
+  .to(CreateTaskController);
 
 export default container;

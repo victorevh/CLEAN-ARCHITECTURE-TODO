@@ -6,6 +6,7 @@ const TYPES = {
   DeleteTaskUseCase: Symbol.for("DeleteTaskUseCase"),
   CompleteTaskUseCase: Symbol.for("CompleteTaskUseCase"),
   GetTaskByIdUseCase: Symbol.for("GetTaskByIdUseCase"),
+  CreateTaskController: Symbol.for("CreateTaskController"),
 };
 
 export default TYPES;
