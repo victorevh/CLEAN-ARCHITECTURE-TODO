@@ -14,6 +14,7 @@ const TYPES = {
   UpdateTaskController: Symbol.for("UpdateTaskController"),
   GetTaskByIdController: Symbol.for("GetTaskByIdController"),
   CompleteTaskController: Symbol.for("CompleteTaskController"),
+  DeleteTaskController: Symbol.for("DeleteTaskController"),
 };
 
 export default TYPES;
