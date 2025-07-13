@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only -r tsconfig-paths/register src/interface/http/server.ts",
+    "dev": "ts-node-dev --respawn --transpile-only -r dotenv-flow/config -r tsconfig-paths/register src/interface/http/server.ts",
     "build": "tsc && tsc-alias",
-    "start": "npm run build && node dist/interface/http/server.js",
+    "start": "node -r dotenv-flow/config dist/interface/http/server.js",
     "test": "jest"
   },
   "keywords": [],
@@ -24,7 +24,7 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "dotenv": "^17.2.0",
+    "dotenv-flow": "^4.1.0",
     "express": "^5.1.0",
     "inversify": "^7.0.0-alpha.5",
     "mongodb": "^6.17.0",
