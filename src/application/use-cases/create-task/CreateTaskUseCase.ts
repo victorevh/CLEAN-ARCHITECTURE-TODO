@@ -3,7 +3,9 @@ import { Task } from "@domain/entities/Task";
 import { ITaskRepository } from "@domain/repositories/ITaskRepository";
 import { ICreateTaskUseCase } from "@application/use-cases/create-task/ICreateTaskUseCase";
 import { CreateTaskDTO } from "@application/use-cases/create-task/CreateTaskDTO";
+import { injectable } from "inversify";
 
+@injectable()
 export class CreateTaskUseCase implements ICreateTaskUseCase {
   constructor(private taskRepository: ITaskRepository) {}
 

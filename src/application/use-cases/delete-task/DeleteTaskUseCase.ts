@@ -1,6 +1,8 @@
 import { ITaskRepository } from "@domain/repositories/ITaskRepository";
 import { IDeleteTaskUseCase } from "@application/use-cases/delete-task/IDeleteTaskUseCase";
+import { injectable } from "inversify";
 
+@injectable()
 export class DeleteTaskUseCase implements IDeleteTaskUseCase {
   constructor(private taskRepository: ITaskRepository) {}
 
