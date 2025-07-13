@@ -1,5 +1,6 @@
 import { Task } from "../../../domain/entities/Task";
+import { CreateTaskDTO } from "./CreateTaskDTO";
 
 export interface ICreateTaskUseCase {
-  execute(props: { title: string; description?: string }): Promise<Task>;
+  execute(data: CreateTaskDTO): Promise<Task>;
 }
