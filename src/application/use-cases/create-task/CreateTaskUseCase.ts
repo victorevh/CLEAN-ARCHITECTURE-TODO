@@ -1,9 +1,9 @@
 import { randomUUID } from "crypto";
 import { Task } from "@domain/entities/Task";
-import { ITaskRepository } from "@domain/repositories/ITaskRepository";
-import { ICreateTaskUseCase } from "@application/use-cases/create-task/ICreateTaskUseCase";
 import { CreateTaskDTO } from "@application/use-cases/create-task/CreateTaskDTO";
 import { inject, injectable } from "inversify";
+import type { ITaskRepository } from "@domain/repositories/ITaskRepository";
+import type { ICreateTaskUseCase } from "@application/use-cases/create-task/ICreateTaskUseCase";
 import TYPES from "@core/types";
 
 @injectable()
