@@ -11,6 +11,7 @@ import { CompleteTaskUseCase } from "@application/use-cases/complete-task/Comple
 import { CreateTaskController } from "@interface/http/controllers/CreateTaskController";
 import { ListTasksController } from "@interface/http/controllers/ListTasksController";
 import { UpdateTaskController } from "@interface/http/controllers/UpdateTaskController";
+import { GetTaskByIdController } from "@interface/http/controllers/GetTaskByIdController";
 
 const container = new Container();
 
@@ -46,5 +47,8 @@ container
 container
   .bind<UpdateTaskController>(TYPES.UpdateTaskController)
   .to(UpdateTaskController);
+container
+  .bind<GetTaskByIdController>(TYPES.GetTaskByIdController)
+  .to(GetTaskByIdController);
 
 export default container;
