@@ -1,6 +1,6 @@
 import "reflect-metadata";
 import express from "express";
-import taskRoutes from "./routes/task-routes";
+import taskRoutes from "@interface/http/routes/task-routes";
 
 const app = express();
 
