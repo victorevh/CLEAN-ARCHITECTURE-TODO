@@ -1,4 +1,5 @@
 import { injectable } from "inversify";
+import { HttpError } from "@interface/http/errors/HttpError";
 import type { Task } from "@domain/entities/Task";
 import type { ITaskRepository } from "@domain/repositories/ITaskRepository";
 
@@ -22,7 +23,7 @@ export class InMemoryTaskRepository implements ITaskRepository {
 
   async update(task: Task): Promise<Task> {
     const index = this.tasks.findIndex((t) => t.id === task.id);
-    if (index === -1) throw new Error("Task not found");
+    if (index === -1) throw HttpError.notFound("Task not found");
     this.tasks[index] = task;
     return task;
   }
