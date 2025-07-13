@@ -11,7 +11,7 @@ const createTaskController = container.get<CreateTaskController>(
   TYPES.CreateTaskController
 );
 const listTasksController = container.get<ListTasksController>(
-  TYPES.ListTasksUseCase
+  TYPES.ListTasksController
 );
 
 router.post("/tasks", adaptRoute(createTaskController));
