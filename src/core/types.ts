@@ -12,6 +12,7 @@ const TYPES = {
   CreateTaskController: Symbol.for("CreateTaskController"),
   ListTasksController: Symbol.for("ListTasksController"),
   UpdateTaskController: Symbol.for("UpdateTaskController"),
+  GetTaskByIdController: Symbol.for("GetTaskByIdController"),
 };
 
 export default TYPES;
