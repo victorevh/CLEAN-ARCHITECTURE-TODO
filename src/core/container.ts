@@ -13,6 +13,7 @@ import { ListTasksController } from "@interface/http/controllers/ListTasksContro
 import { UpdateTaskController } from "@interface/http/controllers/UpdateTaskController";
 import { GetTaskByIdController } from "@interface/http/controllers/GetTaskByIdController";
 import { CompleteTaskController } from "@interface/http/controllers/CompleteTaskController";
+import { DeleteTaskController } from "@interface/http/controllers/DeleteTaskController";
 
 const container = new Container();
 
@@ -54,5 +55,8 @@ container
 container
   .bind<CompleteTaskController>(TYPES.CompleteTaskController)
   .to(CompleteTaskController);
+container
+  .bind<DeleteTaskController>(TYPES.DeleteTaskController)
+  .to(DeleteTaskController);
 
 export default container;
