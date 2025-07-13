@@ -1,8 +1,8 @@
 import { CreateTaskController } from "../CreateTaskController";
 import { CreateTaskUseCase } from "@application/use-cases/create-task/CreateTaskUseCase";
 import { CreateTaskDTO } from "@application/use-cases/create-task/CreateTaskDTO";
-import { IHttpRequest } from "@interface/http/protocols/IHttpRequest";
-import { IHttpResponse } from "@interface/http/protocols/IHttpResponse";
+import type { IHttpRequest } from "@interface/http/protocols/IHttpRequest";
+import type { IHttpResponse } from "@interface/http/protocols/IHttpResponse";
 
 describe("CreateTaskController", () => {
   let createTaskUseCaseMock: Pick<CreateTaskUseCase, "execute">;
