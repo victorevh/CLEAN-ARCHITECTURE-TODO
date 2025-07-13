@@ -1,7 +1,7 @@
-import { ITaskRepository } from "../../../domain/repositories/ITaskRepository";
-import { IUpdateTaskUseCase } from "./IUpdateTaskUseCase";
-import { UpdateTaskDTO } from "./UpdateTaskDTO";
-import type { Task } from "../../../domain/entities/Task";
+import { ITaskRepository } from "@domain/repositories/ITaskRepository";
+import { IUpdateTaskUseCase } from "@application/use-cases/update-task/IUpdateTaskUseCase";
+import { UpdateTaskDTO } from "@application/use-cases/update-task/UpdateTaskDTO";
+import type { Task } from "@domain/entities/Task";
 
 export class UpdateTaskUseCase implements IUpdateTaskUseCase {
   constructor(private taskRepository: ITaskRepository) {}

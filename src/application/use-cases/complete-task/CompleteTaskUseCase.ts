@@ -1,5 +1,5 @@
-import { ITaskRepository } from "../../../domain/repositories/ITaskRepository";
-import { ICompleteTaskUseCase } from "./ICompleteTaskUseCase";
+import { ITaskRepository } from "@domain/repositories/ITaskRepository";
+import { ICompleteTaskUseCase } from "@application/use-cases/complete-task/ICompleteTaskUseCase";
 
 export class CompleteTaskUseCase implements ICompleteTaskUseCase {
   constructor(private taskRepository: ITaskRepository) {}

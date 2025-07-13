@@ -1,8 +1,8 @@
 import { randomUUID } from "crypto";
-import { Task } from "../../../domain/entities/Task";
-import { ITaskRepository } from "../../../domain/repositories/ITaskRepository";
-import { ICreateTaskUseCase } from "./ICreateTaskUseCase";
-import { CreateTaskDTO } from "./CreateTaskDTO";
+import { Task } from "@domain/entities/Task";
+import { ITaskRepository } from "@domain/repositories/ITaskRepository";
+import { ICreateTaskUseCase } from "@application/use-cases/create-task/ICreateTaskUseCase";
+import { CreateTaskDTO } from "@application/use-cases/create-task/CreateTaskDTO";
 
 export class CreateTaskUseCase implements ICreateTaskUseCase {
   constructor(private taskRepository: ITaskRepository) {}

@@ -8,5 +8,23 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@application/*": [
+        "application/*"
+      ],
+      "@core/*": [
+        "core/*"
+      ],
+      "@domain/*": [
+        "domain/*"
+      ],
+      "@infra/*": [
+        "infra/*"
+      ],
+      "@interface/*": [
+        "interface/*"
+      ]
+    }
   }
 }

@@ -1,5 +1,5 @@
-import { ITaskRepository } from "../../../domain/repositories/ITaskRepository";
-import { IDeleteTaskUseCase } from "./IDeleteTaskUseCase";
+import { ITaskRepository } from "@domain/repositories/ITaskRepository";
+import { IDeleteTaskUseCase } from "@application/use-cases/delete-task/IDeleteTaskUseCase";
 
 export class DeleteTaskUseCase implements IDeleteTaskUseCase {
   constructor(private taskRepository: ITaskRepository) {}
