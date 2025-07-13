@@ -1,9 +1,10 @@
 import { ITaskRepository } from "@domain/repositories/ITaskRepository";
-import { IUpdateTaskUseCase } from "@application/use-cases/update-task/IUpdateTaskUseCase";
-import { UpdateTaskDTO } from "@application/use-cases/update-task/UpdateTaskDTO";
+import { IUpdateTaskUseCase } from "./IUpdateTaskUseCase";
+import { UpdateTaskDTO } from "./UpdateTaskDTO";
 import type { Task } from "@domain/entities/Task";
 import { inject, injectable } from "inversify";
 import TYPES from "@core/types";
+import { HttpError } from "@interface/http/errors/HttpError";
 
 @injectable()
 export class UpdateTaskUseCase implements IUpdateTaskUseCase {
@@ -14,13 +15,27 @@ export class UpdateTaskUseCase implements IUpdateTaskUseCase {
 
   async execute(id: string, data: UpdateTaskDTO): Promise<void> {
     const task: Task | null = await this.taskRepository.findById(id);
+
     if (!task) {
-      throw new Error("Task not found");
+      throw HttpError.notFound("Task not found");
     }
 
-    if (data.title !== undefined) task.title = data.title;
-    if (data.description !== undefined) task.description = data.description;
-    if (data.completed !== undefined) task.completed = data.completed;
+    const { title, description, completed } = data;
+
+    const noFieldsProvided =
+      title === undefined &&
+      description === undefined &&
+      completed === undefined;
+
+    if (noFieldsProvided) {
+      throw HttpError.badRequest(
+        "At least one field must be provided to update."
+      );
+    }
+
+    if (title !== undefined) task.title = title;
+    if (description !== undefined) task.description = description;
+    if (completed !== undefined) task.completed = completed;
 
     task.updatedAt = new Date();
 
