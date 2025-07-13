@@ -1,10 +1,10 @@
-import { ITaskRepository } from "@domain/repositories/ITaskRepository";
-import { IUpdateTaskUseCase } from "./IUpdateTaskUseCase";
-import { UpdateTaskDTO } from "./UpdateTaskDTO";
-import type { Task } from "@domain/entities/Task";
+import { UpdateTaskDTO } from "@application/use-cases/update-task/UpdateTaskDTO";
 import { inject, injectable } from "inversify";
-import TYPES from "@core/types";
 import { HttpError } from "@interface/http/errors/HttpError";
+import type { ITaskRepository } from "@domain/repositories/ITaskRepository";
+import type { Task } from "@domain/entities/Task";
+import type { IUpdateTaskUseCase } from "@application/use-cases/update-task/IUpdateTaskUseCase";
+import TYPES from "@core/types";
 
 @injectable()
 export class UpdateTaskUseCase implements IUpdateTaskUseCase {

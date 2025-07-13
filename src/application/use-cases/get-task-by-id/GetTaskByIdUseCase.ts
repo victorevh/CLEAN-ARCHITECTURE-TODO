@@ -1,7 +1,7 @@
-import { ITaskRepository } from "@domain/repositories/ITaskRepository";
-import { IGetTaskByIdUseCase } from "@application/use-cases/get-task-by-id/IGetTaskByIdUseCase";
 import { Task } from "@domain/entities/Task";
 import { inject, injectable } from "inversify";
+import type { ITaskRepository } from "@domain/repositories/ITaskRepository";
+import type { IGetTaskByIdUseCase } from "@application/use-cases/get-task-by-id/IGetTaskByIdUseCase";
 import TYPES from "@core/types";
 
 @injectable()
