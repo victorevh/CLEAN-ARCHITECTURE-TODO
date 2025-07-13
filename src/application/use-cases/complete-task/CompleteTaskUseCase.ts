@@ -1,6 +1,8 @@
 import { ITaskRepository } from "@domain/repositories/ITaskRepository";
 import { ICompleteTaskUseCase } from "@application/use-cases/complete-task/ICompleteTaskUseCase";
+import { injectable } from "inversify";
 
+@injectable()
 export class CompleteTaskUseCase implements ICompleteTaskUseCase {
   constructor(private taskRepository: ITaskRepository) {}
 
