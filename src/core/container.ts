@@ -1,7 +1,6 @@
 import { Container } from "inversify";
 import TYPES from "./types";
 import type { ITaskRepository } from "@domain/repositories/ITaskRepository";
-import { InMemoryTaskRepository } from "@infra/db/in-memory/repositories/InMemoryTaskRepository";
 import { CreateTaskUseCase } from "@application/use-cases/create-task/CreateTaskUseCase";
 import { ListTasksUseCase } from "@application/use-cases/list-tasks/ListTasksUseCase";
 import { GetTaskByIdUseCase } from "@application/use-cases/get-task-by-id/GetTaskByIdUseCase";
@@ -14,13 +13,14 @@ import { UpdateTaskController } from "@interface/http/controllers/UpdateTaskCont
 import { GetTaskByIdController } from "@interface/http/controllers/GetTaskByIdController";
 import { CompleteTaskController } from "@interface/http/controllers/CompleteTaskController";
 import { DeleteTaskController } from "@interface/http/controllers/DeleteTaskController";
+import { MongoTaskRepository } from "@infra/db/mongodb/repositories/MongoTaskRepository";
 
 const container = new Container();
 
 // Repository bindings
 container
   .bind<ITaskRepository>(TYPES.ITaskRepository)
-  .to(InMemoryTaskRepository)
+  .to(MongoTaskRepository)
   .inSingletonScope();
 // Use case bindings
 container
