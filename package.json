@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only -r dotenv-flow/config -r tsconfig-paths/register src/interface/http/server.ts",
     "build": "tsc && tsc-alias",
-    "start": "node -r dotenv-flow/config dist/interface/http/server.js",
+    "start": "npm run build && npm run serve",
+    "serve": "node -r dotenv-flow/config dist/interface/http/server.js",
     "test": "jest"
   },
   "keywords": [],
