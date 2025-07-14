@@ -14,7 +14,7 @@ module.exports = {
     prefix: "<rootDir>/src/",
   }),
   roots: ["<rootDir>/src"],
-  setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
+  setupFilesAfterEnv: ["<rootDir>/src/jest.setup.ts"],
   clearMocks: true,
   resetModules: true,
   verbose: true,
