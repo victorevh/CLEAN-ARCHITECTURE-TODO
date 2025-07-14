@@ -2,6 +2,7 @@ import { inject, injectable } from "inversify";
 import { ListTasksUseCase } from "@application/use-cases/list-tasks/ListTasksUseCase";
 import { HttpError } from "@interface/http/errors/HttpError";
 import type { IController } from "@interface/http/protocols/IController";
+import type { IHttpRequest } from "@interface/http/protocols/IHttpRequest";
 import type { IHttpResponse } from "@interface/http/protocols/IHttpResponse";
 import TYPES from "@core/types";
 
@@ -12,7 +13,7 @@ export class ListTasksController implements IController {
     private readonly listTasksUseCase: ListTasksUseCase
   ) {}
 
-  async handle(): Promise<IHttpResponse> {
+  async handle(_req: IHttpRequest): Promise<IHttpResponse> {
     try {
       const tasks = await this.listTasksUseCase.execute();
 
