@@ -18,4 +18,16 @@ module.exports = {
   clearMocks: true,
   resetModules: true,
   verbose: true,
+  collectCoverage: true,
+  collectCoverageFrom: [
+    "src/**/*.{ts,tsx}",
+    "!src/**/server.ts",
+    "!src/**/routes/*.ts",
+    "!src/core/*.ts",
+    "!src/infra/db/mongodb/schemas/*.ts",
+    "!src/infra/db/mongodb/mongoClient.ts",
+    "!src/interface/http/errors/*.ts",
+  ],
+  coverageDirectory: "coverage",
+  coverageReporters: ["text", "lcov"],
 };
