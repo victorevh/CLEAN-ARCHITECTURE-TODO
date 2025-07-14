@@ -64,4 +64,17 @@ describe("UpdateTaskUseCase", () => {
       "At least one field must be provided to update."
     );
   });
+
+  it("should update description field of an existing task", async () => {
+    const updateData: UpdateTaskDTO = {
+      description: "Updated description",
+    };
+
+    await useCase.execute(existingTask.id, updateData);
+
+    const updatedTask = await repo.findById(existingTask.id);
+
+    expect(updatedTask).not.toBeNull();
+    expect(updatedTask?.description).toBe("Updated description");
+  });
 });
