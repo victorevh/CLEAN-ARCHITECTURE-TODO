@@ -32,6 +32,16 @@ describe("Task Entity", () => {
     );
   });
 
+  it("should not update updatedAt or completed if task already completed", () => {
+    const task = new Task({ ...validProps, completed: true });
+    const oldUpdatedAt = task.updatedAt;
+
+    task.markAsCompleted();
+
+    expect(task.completed).toBe(true);
+    expect(task.updatedAt).toBe(oldUpdatedAt);
+  });
+
   it("should update details correctly", () => {
     const task = new Task(validProps);
     const newTitle = "Updated Task";
