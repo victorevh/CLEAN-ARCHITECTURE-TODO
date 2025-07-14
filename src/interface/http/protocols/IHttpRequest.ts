@@ -8,7 +8,7 @@ export interface IHttpRequest<
   Headers extends Record<string, string | undefined> = Record<
     string,
     string | undefined
-  >
+  >,
 > {
   body?: Body;
   params?: Params;

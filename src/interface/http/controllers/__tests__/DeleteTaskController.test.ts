@@ -11,7 +11,9 @@ describe("DeleteTaskController", () => {
     deleteTaskUseCaseMock = {
       execute: jest.fn(),
     };
-    controller = new DeleteTaskController(deleteTaskUseCaseMock as DeleteTaskUseCase);
+    controller = new DeleteTaskController(
+      deleteTaskUseCaseMock as DeleteTaskUseCase
+    );
   });
 
   it("should return 204 on successful deletion", async () => {
