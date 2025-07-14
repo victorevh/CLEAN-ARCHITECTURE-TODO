@@ -12,21 +12,11 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "paths": {
-      "@application/*": [
-        "application/*"
-      ],
-      "@core/*": [
-        "core/*"
-      ],
-      "@domain/*": [
-        "domain/*"
-      ],
-      "@infra/*": [
-        "infra/*"
-      ],
-      "@interface/*": [
-        "interface/*"
-      ]
+      "@application/*": ["application/*"],
+      "@core/*": ["core/*"],
+      "@domain/*": ["domain/*"],
+      "@infra/*": ["infra/*"],
+      "@interface/*": ["interface/*"]
     }
   }
 }
