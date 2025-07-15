@@ -28,6 +28,7 @@ module.exports = {
     "!src/infra/db/mongodb/mongoClient.ts",
     "!src/interface/http/errors/*.ts",
     "!src/interface/http/docs/*.ts",
+    "!src/interface/http/swagger.ts",
   ],
   coverageDirectory: "coverage",
   coverageReporters: ["text", "lcov"],
