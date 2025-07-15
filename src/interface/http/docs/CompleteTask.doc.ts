@@ -1,34 +1,65 @@
 export const completeTaskDoc = {
   "/tasks/{id}/complete": {
-    post: {
+    patch: {
       tags: ["Tasks"],
       summary: "Mark a task as complete",
-      description: "Marks the task with the given ID as completed.",
+      description: "Marks the task identified by the given ID as completed.",
       operationId: "completeTask",
       parameters: [
         {
           name: "id",
           in: "path",
           required: true,
-          description: "The ID of the task to mark as complete",
+          description: "UUID of the task to mark as complete",
           schema: {
             type: "string",
             format: "uuid",
+            example: "123e4567-e89b-12d3-a456-426614174000",
           },
         },
       ],
       responses: {
         204: {
-          description: "Task marked as completed successfully",
+          description: "Task marked as completed successfully. No content returned.",
         },
         400: {
           description: "Bad Request - Invalid or missing ID",
+          content: {
+            "application/json": {
+              schema: { $ref: "#/components/schemas/HttpError" },
+              example: {
+                statusCode: 400,
+                message: "Task ID is required.",
+                details: [],
+              },
+            },
+          },
         },
         404: {
-          description: "Task not found",
+          description: "Not Found - Task not found",
+          content: {
+            "application/json": {
+              schema: { $ref: "#/components/schemas/HttpError" },
+              example: {
+                statusCode: 404,
+                message: "Task not found",
+                details: [],
+              },
+            },
+          },
         },
         500: {
           description: "Internal Server Error",
+          content: {
+            "application/json": {
+              schema: { $ref: "#/components/schemas/HttpError" },
+              example: {
+                statusCode: 500,
+                message: "Internal server error",
+                details: [],
+              },
+            },
+          },
         },
       },
     },
