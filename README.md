@@ -62,10 +62,29 @@ Domain → Application → Infrastructure → Interface
 ### ⚙️ Installation
 
 ```bash
-git clone https://github.com/victorevh/clean-architecture-todo.git
+git clone https://github.com/your-username/clean-architecture-todo.git
 cd clean-architecture-todo
 npm install
 ```
+
+### 🛠️ Environment Variables
+
+This project uses [`dotenv-flow`](https://www.npmjs.com/package/dotenv-flow) to manage environment-specific configuration files.
+
+Create a `.env` file in the root directory with the following variables:
+
+```env
+# MongoDB connection string (replace with your actual connection URI)
+MONGO_URI=mongodb+srv://username:password@cluster0.mongodb.net/tasklin?retryWrites=true&w=majority
+
+# Application port
+PORT=3000
+
+# Environment (development, production)
+NODE_ENV=development
+```
+
+> ℹ️ When NODE_ENV is set to development, the system uses an in-memory database to simplify testing and local development. You can further customize environment-specific settings using `.env.local`, `.env.production`, or `.env.test` files.
 
 ### ▶️ Run the API
 
