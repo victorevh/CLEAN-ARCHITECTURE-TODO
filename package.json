@@ -1,7 +1,7 @@
 {
   "name": "clean-architecture-todo",
   "version": "1.0.0",
-  "description": "",
+  "description": "Task Management API",
   "main": "index.js",
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only -r dotenv-flow/config -r tsconfig-paths/register src/interface/http/server.ts",
@@ -27,6 +27,8 @@
     "@types/express": "^5.0.3",
     "@types/jest": "^30.0.0",
     "@types/node": "^24.0.13",
+    "@types/swagger-jsdoc": "^6.0.4",
+    "@types/swagger-ui-express": "^4.1.8",
     "eslint": "^9.31.0",
     "globals": "^16.3.0",
     "husky": "^9.1.7",
@@ -46,6 +48,8 @@
     "inversify": "^7.0.0-alpha.5",
     "mongodb": "^6.17.0",
     "mongoose": "^8.16.3",
-    "reflect-metadata": "^0.2.2"
+    "reflect-metadata": "^0.2.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
   }
 }
