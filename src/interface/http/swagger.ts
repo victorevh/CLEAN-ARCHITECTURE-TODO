@@ -1,3 +1,5 @@
+import { createTaskDoc } from "@interface/http/docs/CreateTask.doc";
+
 const swaggerSpec = {
   openapi: "3.0.0",
   info: {
@@ -31,6 +33,9 @@ const swaggerSpec = {
         },
       },
     },
+  },
+    paths: {
+    ...createTaskDoc,
   },
 };
 
