@@ -20,7 +20,8 @@ export const completeTaskDoc = {
       ],
       responses: {
         204: {
-          description: "Task marked as completed successfully. No content returned.",
+          description:
+            "Task marked as completed successfully. No content returned.",
         },
         400: {
           description: "Bad Request - Invalid or missing ID",
