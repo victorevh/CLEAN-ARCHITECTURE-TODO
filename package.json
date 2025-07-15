@@ -19,6 +19,14 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "lint-staged": {
+    "src/**/*.{js,ts,json,md}": [
+      "prettier --write",
+      "eslint --fix",
+      "npm test",
+      "git add"
+    ]
+  },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
