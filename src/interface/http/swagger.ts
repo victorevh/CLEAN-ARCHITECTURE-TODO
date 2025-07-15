@@ -1,5 +1,3 @@
-import { completeTaskDoc } from "@interface/http/docs/CompleteTask.doc";
-
 const swaggerSpec = {
   openapi: "3.0.0",
   info: {
@@ -25,7 +23,11 @@ const swaggerSpec = {
         properties: {
           statusCode: { type: "integer", example: 400 },
           message: { type: "string", example: "Invalid input" },
-          details: { type: "array", items: { type: "string" }, example: ["Field X is required"] },
+          details: {
+            type: "array",
+            items: { type: "string" },
+            example: ["Field X is required"],
+          },
         },
       },
     },
