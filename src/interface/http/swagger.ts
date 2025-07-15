@@ -3,6 +3,7 @@ import { completeTaskDoc } from "@interface/http/docs/CompleteTask.doc";
 import { getTaskByIdDoc } from "@interface/http/docs/GetTaskById.doc";
 import { deleteTaskDoc } from "@interface/http/docs/DeleteTask.doc";
 import { listTasksDoc } from "@interface/http/docs/ListTasks.doc";
+import { updateTaskDoc } from "./docs/UpdateTask.doc";
 
 const swaggerSpec = {
   openapi: "3.0.0",
@@ -48,6 +49,7 @@ const swaggerSpec = {
     },
     "/tasks/{id}": {
       ...getTaskByIdDoc["/tasks/{id}"],
+      ...updateTaskDoc["/tasks/{id}"],
       ...deleteTaskDoc["/tasks/{id}"],
     },
   },
