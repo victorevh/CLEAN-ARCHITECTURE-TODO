@@ -1,5 +1,6 @@
 import { createTaskDoc } from "@interface/http/docs/CreateTask.doc";
 import { completeTaskDoc } from "@interface/http/docs/CompleteTask.doc";
+import { deleteTaskDoc } from "@interface/http/docs/DeleteTask.doc";
 
 const swaggerSpec = {
   openapi: "3.0.0",
@@ -35,9 +36,10 @@ const swaggerSpec = {
       },
     },
   },
-    paths: {
+  paths: {
     ...createTaskDoc,
-    ...completeTaskDoc
+    ...completeTaskDoc,
+    ...deleteTaskDoc,
   },
 };
 
