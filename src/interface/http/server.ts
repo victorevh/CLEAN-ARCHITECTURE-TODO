@@ -31,7 +31,9 @@ async function start() {
 
     app.listen(PORT, () => {
       console.log(`[Server] Running on port ${PORT} using "${DRIVER}" driver`);
-      console.log(`[Swagger] API docs available at http://localhost:${PORT}/api-docs`);
+      console.log(
+        `[Swagger] API docs available at http://localhost:${PORT}/api-docs`
+      );
     });
   } catch (error) {
     console.error("[Startup] Failed to initialize server:", error);
